@@ -285,6 +285,7 @@ export const getTour = async (req, res) => {
         //         model: "playerModel",
         //     },
         // });
+
         console.log("Get tour successfully");
         res.status(200).json(tour);
     } catch (error) {
