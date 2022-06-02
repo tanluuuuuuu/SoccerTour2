@@ -353,7 +353,7 @@ function CreateTeamComponent() {
             </div>
 
             {userRegister.length > 0 ? (
-                <h3 className="text-center bg-danger text-white">
+                <h3 className="text-center bg-light">
                     Danh sách đơn đăng ký của bạn
                 </h3>
             ) : (

@@ -4,9 +4,9 @@ const MotionHoc = (Component) => {
   return function HOC() {
     return (
       <motion.div
-        initial={{ y: 500 }}
+        initial={{ x: 500 }}
         animate={{
-          y: 0,
+          x: 0,
           transition: { duration: 0.5, type: "spring" },
         }}
         exit={{

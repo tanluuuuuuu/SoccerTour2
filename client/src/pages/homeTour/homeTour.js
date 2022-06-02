@@ -96,7 +96,7 @@ function HomeTourComponent({ isLoading }) {
     const Ranking = () => {
         return (
             <Container className="mt-3">
-                <h3 className="text-center bg-danger text-white">
+                <h3 className="text-center bg-secondary text-white">
                     Bảng xếp hạng
                     <span
                         style={{
@@ -140,7 +140,7 @@ function HomeTourComponent({ isLoading }) {
     const RankingPlayer = () => {
         return (
             <Container className="mt-3">
-                <h3 className="text-center bg-danger text-white">
+                <h3 className="text-center bg-secondary text-white">
                     Bảng xếp hạng cầu thủ
                     <span
                         style={{
@@ -184,7 +184,7 @@ function HomeTourComponent({ isLoading }) {
     const MatchHappen = () => {
         return (
             <Container className="mt-3">
-                <h3 className="text-center bg-danger text-white">
+                <h3 className="text-center bg-secondary text-white">
                     Lịch thi đấu
                 </h3>
                 {homeMatches?.map((round) =>
@@ -221,7 +221,7 @@ function HomeTourComponent({ isLoading }) {
     const TourGallery = () => {
         return (
             <Container className="my-5">
-                <h3 className="text-center bg-danger text-white">
+                <h3 className="text-center bg-secondary text-white">
                     {tour.tourName}
                 </h3>
                 <Row>
@@ -250,13 +250,13 @@ function HomeTourComponent({ isLoading }) {
                             <Navbar.Brand>Soccer Tour</Navbar.Brand>
                             <Nav>
                                 <Button
-                                    className="bg-danger mx-2"
+                                    className="bg-secondary mx-2"
                                     onClick={() => setShowLoginForm(true)}
                                 >
                                     Đăng nhập
                                 </Button>
                                 <Button
-                                    className="bg-danger"
+                                    className="bg-secondary"
                                     onClick={() => setShowRegisterForm(true)}
                                 >
                                     Đăng ký

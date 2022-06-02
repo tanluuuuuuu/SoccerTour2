@@ -27,7 +27,7 @@ const UserListComponent = () => {
 
     return (
         <Container className="mt-5">
-            <h3 className="text-center bg-danger text-white">
+            <h3 className="text-center bg-secondary text-white">
                 Danh sách người dùng
             </h3>
             {userList?.map((user) => (

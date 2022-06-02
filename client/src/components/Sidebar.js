@@ -9,49 +9,55 @@ import { logout } from "../actions/user";
 
 const Container = styled.div`
     position: fixed;
-    width: 4%;
-    height: 100vh;
+    width: 100vw;
+    height: 4;
 
     display: flex;
     align-items: center;
 
+    top: 0;
+
     transition: width 1s;
-    z-index: 0;
+    z-index: 9;
 `;
 
 const SidebarContainer = styled.div`
     position: relative;
-    background-color: #d40f0f;
+    background-color: #bcbcbc;
     width: 100%;
     height: 80%;
     color: #fff;
 
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
     justify-content: center;
-
-    border-radius: 0 30px 30px 0;
-    z-index: 1;
+    z-index: 9;
 `;
 
 const ListItem = styled.ul`
     list-style: none;
-    padding: 0;
     flex: 2;
+    margin: 0;
 
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
     justify-content: space-evenly;
+    
 `;
 
 const Item = styled.li`
-    font-size: 2rem;
     cursor: pointer;
+    padding: 0.5rem;
 
     & a {
         color: inherit;
+    }
+
+    &:hover {
+        background-color: #aaa;
+        transition: all 0.5s;
     }
 `;
 
@@ -93,15 +99,18 @@ function Sidebar() {
             <SidebarContainer>
                 <ListItem>
                     <Item>
-                        <Link to={"/"}>
-                            <i className="fa-solid fa-house"></i>
+                        <Link to={"/"} className="text-decoration-none">
+                            <p className="fs-5 mb-0">Trang chủ</p>
                         </Link>
                     </Item>
 
                     {user.role === "teamManager" ? (
                         <Item>
-                            <Link to={"/newteam"}>
-                                <i className="fa-solid fa-file-signature"></i>
+                            <Link
+                                to={"/newteam"}
+                                className="text-decoration-none"
+                            >
+                                <p className="fs-5 mb-0">Đơn đăng ký</p>
                             </Link>
                         </Item>
                     ) : (
@@ -110,8 +119,11 @@ function Sidebar() {
 
                     {user.role === "admin" ? (
                         <Item>
-                            <Link to={"/registerlist"}>
-                                <i className="fa-solid fa-file-signature"></i>
+                            <Link
+                                to={"/registerlist"}
+                                className="text-decoration-none"
+                            >
+                                <p className="fs-5 mb-0">Các đơn đăng ký</p>
                             </Link>
                         </Item>
                     ) : (
@@ -120,8 +132,11 @@ function Sidebar() {
 
                     {user.role === "admin" ? (
                         <Item>
-                            <Link to={"/calendar"}>
-                                <i className="fa-solid fa-calendar"></i>
+                            <Link
+                                to={"/calendar"}
+                                className="text-decoration-none"
+                            >
+                                <p className="fs-5 mb-0">Lịch thi đấu</p>
                             </Link>
                         </Item>
                     ) : (
@@ -130,8 +145,11 @@ function Sidebar() {
 
                     {user.role === "teamManager" ? (
                         <Item>
-                            <Link to={"/teamcalendar"}>
-                                <i class="fa-solid fa-calendar"></i>
+                            <Link
+                                to={"/teamcalendar"}
+                                className="text-decoration-none"
+                            >
+                                <p className="fs-5 mb-0">Lịch thi đấu</p>
                             </Link>
                         </Item>
                     ) : (
@@ -139,15 +157,15 @@ function Sidebar() {
                     )}
 
                     <Item>
-                        <Link to={"/search"}>
-                            <i class="fa-solid fa-magnifying-glass"></i>
+                        <Link to={"/search"} className="text-decoration-none">
+                            <p className="fs-5 mb-0">Tìm kiếm cầu thủ</p>
                         </Link>
                     </Item>
 
                     {user.role === "admin" ? (
                         <Item>
-                            <Link to={"/rule"}>
-                                <i className="fa-brands fa-autoprefixer"></i>
+                            <Link to={"/rule"} className="text-decoration-none">
+                                <p className="fs-5 mb-0">Quy định giải đấu</p>
                             </Link>
                         </Item>
                     ) : (
@@ -155,8 +173,8 @@ function Sidebar() {
                     )}
                     {user.role === "teamManager" ? (
                         <Item>
-                            <Link to={"/user"}>
-                                <i class="fa-solid fa-user"></i>
+                            <Link to={"/user"} className="text-decoration-none">
+                                <p className="fs-5 mb-0">Người dùng</p>
                             </Link>
                         </Item>
                     ) : (
@@ -165,8 +183,11 @@ function Sidebar() {
 
                     {user.role === "admin" ? (
                         <Item>
-                            <Link to={"/userlist"}>
-                                <i class="fa-solid fa-users"></i>
+                            <Link
+                                to={"/userlist"}
+                                className="text-decoration-none"
+                            >
+                                <p className="fs-5 mb-0">Danh sách người dùng</p>
                             </Link>
                         </Item>
                     ) : (
@@ -175,7 +196,7 @@ function Sidebar() {
                 </ListItem>
                 <ProfileContainer>
                     <Button variant="light" size="sm" onClick={handleLogout}>
-                    <i class="fa-solid fa-power-off"></i>
+                        Đăng xuất
                     </Button>
                 </ProfileContainer>
             </SidebarContainer>
