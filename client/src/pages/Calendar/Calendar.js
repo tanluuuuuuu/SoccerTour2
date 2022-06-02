@@ -285,7 +285,7 @@ function CalendarComponent() {
                 {["awayMatches", "homeMatches"].map((homeOrAway) => (
                     <>
                         {
-                            <h3 className="text-center mt-5 bg-danger text-white">
+                            <h3 className="text-center mt-5 bg-primary text-white">
                                 {homeOrAway === "awayMatches"
                                     ? "Lượt đi"
                                     : "Lượt về"}
@@ -501,7 +501,7 @@ function CalendarComponent() {
                     <Button variant="secondary" onClick={onSaveMatchInfo}>
                         Save
                     </Button>
-                    <Button variant="danger" onClick={handleCloseMatchInfo}>
+                    <Button variant="secondary" onClick={handleCloseMatchInfo}>
                         Cancel
                     </Button>
                 </Modal.Footer>
@@ -651,7 +651,7 @@ function CalendarComponent() {
                                                             <b>{index + 1}</b>
                                                             <Button
                                                                 size="sm"
-                                                                variant="danger"
+                                                                variant="secondary"
                                                                 onClick={() => {
                                                                     team ===
                                                                     "team1Result"
@@ -874,7 +874,7 @@ function CalendarComponent() {
                         )}
                         Save
                     </Button>
-                    <Button variant="danger" onClick={handleCloseMatchResult}>
+                    <Button variant="secondary" onClick={handleCloseMatchResult}>
                         Cancel
                     </Button>
                 </Modal.Footer>

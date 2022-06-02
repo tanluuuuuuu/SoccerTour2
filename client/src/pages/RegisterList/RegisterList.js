@@ -49,7 +49,7 @@ const RegisterListComponent = () => {
 
     return (
         <Container className="my-5">
-            <h3 className="bg-secondary text-center text-white">
+            <h3 className="bg-primary text-center text-white">
                 Danh sách đơn đăng ký
             </h3>
             {registerList?.map((team, index) => (

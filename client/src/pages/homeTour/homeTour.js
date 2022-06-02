@@ -96,7 +96,7 @@ function HomeTourComponent({ isLoading }) {
     const Ranking = () => {
         return (
             <Container className="mt-3">
-                <h3 className="text-center bg-secondary text-white">
+                <h3 className="text-center bg-primary text-white">
                     Bảng xếp hạng
                     <span
                         style={{
@@ -140,7 +140,7 @@ function HomeTourComponent({ isLoading }) {
     const RankingPlayer = () => {
         return (
             <Container className="mt-3">
-                <h3 className="text-center bg-secondary text-white">
+                <h3 className="text-center bg-primary text-white">
                     Bảng xếp hạng cầu thủ
                     <span
                         style={{
@@ -184,36 +184,48 @@ function HomeTourComponent({ isLoading }) {
     const MatchHappen = () => {
         return (
             <Container className="mt-3">
-                <h3 className="text-center bg-secondary text-white">
-                    Lịch thi đấu
-                </h3>
-                {homeMatches?.map((round) =>
-                    round.matches.map((match) => (
-                        <Card className="mt-2" key={match?._id}>
-                            <Card.Body className="text-center">
-                                <Row>
-                                    <Col xs={5}>{match?.team1?.teamName}</Col>
-                                    <Col xs={2}>VS</Col>
-                                    <Col xs={5}>{match?.team2?.teamName}</Col>
-                                </Row>
-                            </Card.Body>
-                        </Card>
-                    ))
-                )}
+                <Card>
+                    <Card.Header className="bg-primary">
+                        <h3 className="text-center text-white">Lịch thi đấu</h3>
+                    </Card.Header>
+                    <Card.Body>
+                        {homeMatches?.map((round) =>
+                            round.matches.map((match) => (
+                                <Card className="mt-2" key={match?._id}>
+                                    <Card.Body className="text-center">
+                                        <Row>
+                                            <Col xs={5}>
+                                                {match?.team1?.teamName}
+                                            </Col>
+                                            <Col xs={2}>VS</Col>
+                                            <Col xs={5}>
+                                                {match?.team2?.teamName}
+                                            </Col>
+                                        </Row>
+                                    </Card.Body>
+                                </Card>
+                            ))
+                        )}
 
-                {awayMatches?.map((round) =>
-                    round.matches.map((match) => (
-                        <Card className="mt-2" key={match?._id}>
-                            <Card.Body className="text-center">
-                                <Row>
-                                    <Col xs={5}>{match?.team1?.teamName}</Col>
-                                    <Col xs={2}>VS</Col>
-                                    <Col xs={5}>{match?.team2?.teamName}</Col>
-                                </Row>
-                            </Card.Body>
-                        </Card>
-                    ))
-                )}
+                        {awayMatches?.map((round) =>
+                            round.matches.map((match) => (
+                                <Card className="mt-2" key={match?._id}>
+                                    <Card.Body className="text-center">
+                                        <Row>
+                                            <Col xs={5}>
+                                                {match?.team1?.teamName}
+                                            </Col>
+                                            <Col xs={2}>VS</Col>
+                                            <Col xs={5}>
+                                                {match?.team2?.teamName}
+                                            </Col>
+                                        </Row>
+                                    </Card.Body>
+                                </Card>
+                            ))
+                        )}
+                    </Card.Body>
+                </Card>
             </Container>
         );
     };
@@ -221,22 +233,24 @@ function HomeTourComponent({ isLoading }) {
     const TourGallery = () => {
         return (
             <Container className="my-5">
-                <h3 className="text-center bg-secondary text-white">
-                    {tour.tourName}
-                </h3>
-                <Row>
-                    <Col xs={8}>
+                <Card border="primary">
+                    <Card.Header className="bg-primary">
+                        <h3 className="text-center text-white">
+                            {tour.tourName}
+                        </h3>
+                    </Card.Header>
+                    <Card.Body>
                         <MatchHappen />
-                    </Col>
-                    <Col xs={4}>
                         <Row>
-                            <Ranking />
+                            <Col>
+                                <Ranking />
+                            </Col>
+                            <Col>
+                                <RankingPlayer />
+                            </Col>
                         </Row>
-                        <Row>
-                            <RankingPlayer />
-                        </Row>
-                    </Col>
-                </Row>
+                    </Card.Body>
+                </Card>
             </Container>
         );
     };
@@ -247,7 +261,7 @@ function HomeTourComponent({ isLoading }) {
                 <>
                     <Navbar className="bg-white">
                         <Container>
-                            <Navbar.Brand>Soccer Tour</Navbar.Brand>
+                            <Navbar.Brand>Giải vô địch quốc gia</Navbar.Brand>
                             <Nav>
                                 <Button
                                     className="bg-secondary mx-2"
@@ -289,7 +303,7 @@ function HomeTourComponent({ isLoading }) {
                 </Modal.Header>
                 <Modal.Body>
                     {erMessage.length > 0 ? (
-                        <Alert variant="danger">{erMessage}</Alert>
+                        <Alert variant="secondary">{erMessage}</Alert>
                     ) : (
                         <></>
                     )}
@@ -322,7 +336,7 @@ function HomeTourComponent({ isLoading }) {
                         <Row className="my-2">
                             <Col className="text-center">
                                 <Button
-                                    variant="danger"
+                                    variant="secondary"
                                     type="submit"
                                     className="w-100"
                                     onClick={loginFormSubmit}
@@ -369,7 +383,7 @@ function HomeTourComponent({ isLoading }) {
                 </Modal.Header>
                 <Modal.Body>
                     {erMessage.length > 0 ? (
-                        <Alert variant="danger">{erMessage}</Alert>
+                        <Alert variant="secondary">{erMessage}</Alert>
                     ) : (
                         <></>
                     )}
@@ -453,7 +467,7 @@ function HomeTourComponent({ isLoading }) {
                         <Row className="my-2">
                             <Col className="text-center">
                                 <Button
-                                    variant={isSuccess ? "primary" : "danger"}
+                                    variant={isSuccess ? "primary" : "secondary"}
                                     className="w-100"
                                     type="submit"
                                     disabled={isSuccess}

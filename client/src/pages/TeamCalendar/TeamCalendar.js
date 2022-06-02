@@ -70,7 +70,7 @@ const TeamCalendarComponent = () => {
 
     return (
         <Container className="mt-5">
-            <h3 className="text-center bg-secondary text-white">
+            <h3 className="text-center bg-primary text-white">
                 Lịch thi đấu đội
             </h3>
             <h4 className="text-center">Lượt đi</h4>

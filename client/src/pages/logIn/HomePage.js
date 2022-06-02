@@ -91,14 +91,14 @@ const HomePage = () => {
                     <Navbar.Toggle />
                     <Navbar.Collapse className="justify-content-end">
                         <Button
-                            variant="danger"
+                            variant="secondary"
                             className="mx-3"
                             onClick={() => setShowLoginForm(true)}
                         >
                             Đăng nhập
                         </Button>
                         <Button
-                            variant="danger"
+                            variant="secondary"
                             onClick={() => setShowRegisterForm(true)}
                         >
                             Đăng ký
@@ -142,7 +142,7 @@ const HomePage = () => {
                         <Row className="my-2">
                             <Col className="text-center">
                                 <Button
-                                    variant="danger"
+                                    variant="secondary"
                                     type="submit"
                                     className="w-100"
                                     onClick={loginFormSubmit}
@@ -164,7 +164,7 @@ const HomePage = () => {
                                 </Button>
                             </Col>
                             <Col>
-                                <Button variant="danger" className="w-100">
+                                <Button variant="secondary" className="w-100">
                                     Google
                                 </Button>
                             </Col>
@@ -276,7 +276,7 @@ const HomePage = () => {
                         <Row className="my-2">
                             <Col className="text-center">
                                 <Button
-                                    variant={isSuccess ? "primary" : "danger"}
+                                    variant={isSuccess ? "primary" : "secondary"}
                                     className="w-100"
                                     type="submit"
                                     disabled={isSuccess}
@@ -321,7 +321,7 @@ const HomePage = () => {
                             </Col>
                             <Col>
                                 <Button
-                                    variant="danger"
+                                    variant="secondary"
                                     className="w-100"
                                     disabled={isSuccess}
                                 >

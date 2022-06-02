@@ -45,7 +45,7 @@ function TourRule() {
 
     return (
         <Container className="mt-5">
-            <h3 className="bg-danger text-center text-white">
+            <h3 className="bg-secondary text-center text-white">
                 Quy định giải đấu
             </h3>
             <Form onSubmit={handleSubmit}>

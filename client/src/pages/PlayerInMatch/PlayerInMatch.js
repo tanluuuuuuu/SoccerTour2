@@ -8,7 +8,7 @@ function PlayerInMatch() {
 
     return (
         <Container className="mt-5">
-            <h3 className="text-center bg-secondary text-white">
+            <h3 className="text-center bg-primary text-white">
                 Lịch thi đấu từng đội
             </h3>
             {allTeams?.map((team) => (

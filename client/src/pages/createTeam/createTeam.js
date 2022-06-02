@@ -340,7 +340,7 @@ function CreateTeamComponent() {
                 </div>
                 <div className="d-grid gap-2 mb-5">
                     <Button
-                        variant="danger"
+                        variant="secondary"
                         type="submit"
                         disabled={!isOpenForRegister && !user.team && !loading}
                     >
